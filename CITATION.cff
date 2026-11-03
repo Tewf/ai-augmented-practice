@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If this repository helps you, you may cite it as below. It is an informal,
+  work-in-progress synthesis of published research, written with Claude, an AI
+  assistant by Anthropic. It is not an official standard, not peer-reviewed,
+  and not a new result.
+title: "ai-augmented-practice (work in progress)"
+abstract: >-
+  Every practice of the AI-augmented method read as an algorithm for a named problem: one page per practice with the problem class, the best-known algorithm and its reference implementation, the gap and the change proposed, in a table a program checks. Scope only; the review is not started.
+type: software
+authors:
+  - name: "Tewf"
+repository-code: "https://github.com/Tewf/ai-augmented-practice"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - algorithmic decision-making
+  - operations research
+  - decision analysis
+  - information foraging
+  - AI-augmented work
+  - literature review

@@ -1,0 +1,5 @@
+---
+title: "Practice as algorithm"
+---
+
+{{< include README.md >}}
