@@ -46,7 +46,7 @@ digraph where_it_sits {
 
 - **It reads [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)**: the method is that repository's, and each practice here is one of its practices.
 - **It links [ai-augmented-data-gathering](https://github.com/Tewf/ai-augmented-data-gathering)** for the rows whose algorithm lives there, and points to [ai-augmented-foundations](https://github.com/Tewf/ai-augmented-foundations), which holds the theory of the unknown objective, without depending on it.
-- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md)** (v1.20.0) and runs its checks in CI.
+- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md)** (v1.21.0) and runs its checks in CI.
 - **It links down only.** The family's map is [ai-augmented](https://github.com/Tewf/ai-augmented).
 
 ## Scope

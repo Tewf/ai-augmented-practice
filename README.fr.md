@@ -46,7 +46,7 @@ digraph where_it_sits {
 
 - **Il lit [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : la méthode est celle de ce dépôt, et chaque pratique d'ici est l'une des siennes.
 - **Il lie [ai-augmented-data-gathering](https://github.com/Tewf/ai-augmented-data-gathering)** pour les lignes dont l'algorithme y vit, et pointe vers [ai-augmented-foundations](https://github.com/Tewf/ai-augmented-foundations), qui tient la théorie de l'objectif inconnu, sans en dépendre.
-- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/4f99372093729dacf982e9174e94f6b8793c513d/standard.md)** (v1.20.0) et exécute ses vérifications en CI.
+- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/2e5b6f0c3e67d2dc8195a63cf882d46170e79a5a/standard.md)** (v1.21.0) et exécute ses vérifications en CI.
 - **Il ne pointe que vers le bas.** La carte de la famille est [ai-augmented](https://github.com/Tewf/ai-augmented).
 
 ## Périmètre
