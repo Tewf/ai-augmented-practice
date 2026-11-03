@@ -15,7 +15,8 @@ stylesheets = []
 
 # The headings the standard's decision-record shape requires (reader-ergonomics v1.20.0, shapes/decision-record.md).
 [shape_conformance]
-shapes = [{ name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] }]
+shapes = [{ name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] },
+          { name = "practice page", files = ["map/[a-z]*.md"], required = ["The practice", "The problem class", "The best-known algorithm", "The gap", "The change proposed", "Sources", "See also"] }]
 
 # Path questions are answered with their path quoted, so the quotes check stays strict.
 [judgment_quotes]
@@ -28,3 +29,14 @@ family = ["reader-ergonomics",
           "reader-ergonomics-blueprint",
           "ai-augmented"]
 shared_links = []
+
+# The map: one row per practice, checked by checks/local/map_table.py; its tests run in CI.
+[map_table]
+table = "map/README.md"
+bibliography = "evidence/bibliography.md"
+fit = ["algorithm", "partly", "habit"]
+min_rows = 12   # PROVISIONAL: the maintainer's first list has twelve practices
+
+# Citations are read in the evidence and on the map's pages, and on the front pages.
+[citations]
+files = ["evidence/", "map/", "README.md", "README.fr.md"]

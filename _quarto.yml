@@ -18,6 +18,8 @@ website:
   page-navigation: true
   navbar:
     left:
+      - text: The map
+        href: map/README.md
       - text: Decisions
         href: decisions/README.md
     right:

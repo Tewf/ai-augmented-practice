@@ -52,6 +52,10 @@ jobs:
           for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do
             git clone --quiet --depth 1 "https://github.com/Tewf/$name" "$name"
           done
+      - name: Test the map check
+        env:
+          READER_ERGONOMICS_CHECKS: ${{ github.workspace }}/standard/checks
+        run: python3 -m unittest discover -s repository/checks
       - name: Check the repository, tiers program and meaning
         # Runs the topic check, the Lean link check and the comparator (checks/local/) with the standard's own.
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
