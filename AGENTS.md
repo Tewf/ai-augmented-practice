@@ -7,8 +7,7 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/4f99372093
 
 1. Read the standard at the release this repository checks against (v1.20.0), and the front page's scope: what is in,
    what is out, and which neighbour holds what is out.
-2. The first job is the review on the front page, in its five steps, staged outside this repository until it names its
-   baseline; it is finished when it can. The repository may be renamed at the frame step.
+2. The first pass of the review is written (map/ and evidence/). A new row goes in the table of map/README.md with its page and its bibliography entry; the table check fails until all three exist.
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
    [decisions/](decisions/).
 

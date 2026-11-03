@@ -7,9 +7,11 @@ Each practice of the AI-augmented method, read as an **algorithm** for a named p
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-03):** set up; nothing is written yet beyond the scope. The first job is a literature review, not
-> started. The name is provisional until that review's first step says what the field calls this. It is not an
-> official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-03):** version 0.1.0. Built: the first pass of the review, 40 sources read by abstract or record, the
+> twelve rows of the map each with a page, a table checked by a program with 16 unit tests, and a named baseline. Open:
+> no full text read, no proposed change run on a real case, and the data-gathering rows wait for that repository's own
+> review. The field has no single name for this, and the name stays. It is not an official standard, not a
+> peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -59,48 +61,52 @@ digraph where_it_sits {
 | out | the method the practices belong to | [ai-augmented-project](https://github.com/Tewf/ai-augmented-project) |
 | out | the theory of an objective that is not known in advance | [ai-augmented-foundations](https://github.com/Tewf/ai-augmented-foundations) |
 
-## The first job: a literature review
+## The map
 
-Not started. It follows the order of a thesis review, and it is finished when it can name the baseline.
+Twelve rows, one page each: [the map](map/README.md). The practice is the maintainer's, written down for this review.
 
-The map's first twelve rows, from the maintainer's own list of practices. The problem class is a lead to verify, not a finding:
+| Practice | Problem class | Algorithm | Fit |
+|---|---|---|---|
+| [scope and review](map/scope-and-review.md) | sequential decision problem | knowledge gradient | partly |
+| [data gathering](map/data-gathering.md) | information foraging | marginal value rule, Thompson sampling | algorithm |
+| [stopping](map/stopping.md) | estimating what is still unseen | coverage estimation | algorithm |
+| [snowballing](map/snowballing.md) | traversal of a citation graph | citation chasing, ranked frontier | algorithm |
+| [paywalled sources](map/paywalled-sources.md) | value of information | expected value of information | algorithm |
+| [deep reading](map/deep-reading.md) | active learning | uncertainty sampling | algorithm |
+| [runs per arm](map/runs-per-arm.md) | sequential testing, factorial design | confidence sequences | algorithm |
+| [tiers](map/tiers.md) | multi-fidelity optimisation | Hyperband, model cascade | algorithm |
+| [batches](map/batches.md) | scheduling with precedence | list scheduling, critical path | algorithm |
+| [the budget cap](map/the-budget-cap.md) | allocation under a budget | cost-aware Bayesian optimisation | partly |
+| [protocol before the run](map/protocol-before-the-run.md) | preregistration | registered report | algorithm |
+| [memory](map/memory.md) | transfer | memory tiers over case-based reasoning | habit |
 
-| Practice | Problem class (a lead) |
-|---|---|
-| scope and review | a sequential decision problem |
-| data gathering | information foraging (row held by data-gathering) |
-| stopping | estimating what is still unseen (row held by data-gathering) |
-| snowballing | traversal of a citation graph |
-| paywalled sources | the value of information (row held by data-gathering) |
-| deep reading | active learning |
-| runs per arm | sequential testing and factorial design |
-| tiers | multi-fidelity optimisation |
-| batches | scheduling with precedence |
-| the budget cap | allocation under a budget |
-| protocol before the run | preregistration |
-| memory | transfer |
+## What the map found
 
-1. **Frame:** the problem in one sentence, and what each field calls it. Leads to verify: algorithmic decision-making, the operations research of knowledge work, decision analysis, and the heuristics-and-biases literature set against algorithms. The repository may be renamed then.
-2. **Review:** each name, searched by its academic name, its acronym and its author; surveys first.
-   - the best-known algorithm for each problem class, by its academic name, its acronym and its author, surveys first;
-   - where a reference implementation exists, found under the author's name before anything is written as missing;
-   - where people have been measured against algorithms on the same problem, and who won.
-3. **State of the art, and the case against.**
-4. **Position:** what this repository asks that the field does not already answer.
-5. **Baseline:** the twelve practices as the maintainer runs them today, written down row by row, and compared with the best algorithm the review found for each.
+The first pass, 40 sources, read by abstract or record. Sources and grades are on each page.
 
-## Questions the review must answer
+- **No field names the whole.** Sequential decision analytics (Powell 2019) names the decision rows, and the automation of systematic reviews (Marshall 2019) names rows 2 to 6 ([frame](evidence/frame.md)). The name stays.
+- **Eleven of twelve rows have a named problem and an implementation.** Memory is a habit: the field has designs, and no measure of notes kept by a person. Scope and the budget cap are posed but lack the data to run a policy.
+- **The gap is mostly records, not a better algorithm.** Ten of the twelve changes begin by writing down a quantity the algorithm needs. Examples are yield per search string, the tier tried, and each job's predecessors.
+- **Ten runs per arm detect only large effects.** Computed here. At ten runs per arm, power is 0.63 for a rate rising from 0 to 0.5, and 0.14 for 0.5 to 0.8. At sixty, it is 0.91 for 0.5 to 0.8, and 0.31 for 0.5 to 0.65 ([runs per arm](map/runs-per-arm.md)).
+- **People against algorithms.** Mechanical prediction was about 10% more accurate than clinical judgment, and clinical judgment was substantially better in 6% to 16% of studies (Grove 2000, abstract). Intuition holds in regular environments with feedback (Kahneman 2009). So the choice of reading depth, the inclusion of a paper and what to note stay with the person.
 
-- **Algorithm or habit.** Which practices have a problem class that is well posed enough to name an algorithm, and which are habits no field has formalised?
-- **The gap.** For each row, how far is the maintainer's practice from the best-known algorithm, measured how?
-- **People against algorithms.** Where does the literature find a person with judgment beating the algorithm, and what does that say about which rows to leave alone?
-- **The check.** What must a program read in a row to decide that it is complete, and what can it never decide?
+## The baseline
+
+**B1: protocol before the run.** The practice already is the field's procedure, preregistration (Nosek 2018): the plan and the prediction are written first and a program judges the run. The gap is a third-party timestamp and a list of deviations, the gaps Claesen 2021 found: every study of its sample deviated from its plan, and all but one left a deviation undisclosed (abstract). It is the one row where the maintainer's practice and the best-known procedure coincide in form ([protocol before the run](map/protocol-before-the-run.md)).
+
+## Questions the review answered
+
+- **Algorithm or habit.** Nine rows are algorithms, two are posed but unrun, and one, memory, is a habit.
+- **The gap.** Measured by what the change would record; no gap is yet in hours or tokens, because the records do not exist.
+- **People against algorithms.** See the findings above; judgment is left alone where the environment is irregular.
+- **The check.** A program reads that each row has a problem, an algorithm with a key that resolves, a GitHub link and a change. It cannot decide that an algorithm is the best known ([the table check](checks/local/map_table.py)).
 
 ## Check it
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
 python3 reader-ergonomics/checks/run.py path/to/this/repository
+python3 -m unittest discover -s checks   # the table check's tests
 ```
 
 CI runs the same checks on every push, and a run fails on any error
@@ -112,7 +118,9 @@ master also renders the site, [tewf.github.io/ai-augmented-practice](https://tew
 
 | Part | Summary |
 |---|---|
-| [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
+| [map](map/) | twelve practices, each read as an algorithm for a named problem, with a table a program checks |
+| [evidence](evidence/) | the frame, the protocol and the bibliography of 40 sources |
+| [decisions](decisions/) | one record per choice that shapes this repository |
 
 ## Licence
 

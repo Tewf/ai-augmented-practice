@@ -1,12 +1,14 @@
 # Practice as algorithm
 
-> Every practice of the AI-augmented method read as an algorithm for a named problem: one page per practice with the problem class, the best-known algorithm and its reference implementation, the gap and the change proposed, in a table a program checks. Scope only; the review is not started.
+> Every practice of the AI-augmented method read as an algorithm for a named problem: one page per practice with the problem class, the best-known algorithm and its reference implementation, the gap and the change proposed, in a table a program checks. First pass written: twelve rows, 40 sources, a baseline.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 
 ## The repository
 
-- [Practice as algorithm](https://tewf.github.io/ai-augmented-practice/README.md): the scope, the first job and the questions its review must answer
+- [The map](https://tewf.github.io/ai-augmented-practice/map/README.md): twelve practices, each with its problem class, best-known algorithm, reference implementation, gap and proposed change
+- [Evidence](https://tewf.github.io/ai-augmented-practice/evidence/README.md): the frame, the protocol and the bibliography of 40 sources
+- [Practice as algorithm](https://tewf.github.io/ai-augmented-practice/README.md): the scope, the findings of the first pass, the baseline and the table of rows
 - [Decisions](https://tewf.github.io/ai-augmented-practice/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing

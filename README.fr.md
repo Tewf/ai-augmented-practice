@@ -7,9 +7,11 @@ Chaque pratique de la méthode augmentée par l'IA, lue comme un **algorithme** 
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-03) :** mis en place ; rien n'est encore écrit au-delà du périmètre. Le premier travail est une revue
-> de littérature, non commencée. Le nom est provisoire jusqu'à ce que la première étape de cette revue dise comment le
-> domaine nomme la chose. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-03) :** version 0.1.0. Fait : la première passe de la revue, 40 sources lues par résumé ou notice, les
+> douze lignes de la carte avec une page chacune, un tableau vérifié par un programme (16 tests unitaires) et une
+> référence nommée. Ouvert : aucun texte intégral lu, aucun changement proposé essayé sur un cas réel, et les lignes de
+> la collecte attendent la revue de ce dépôt. Aucun domaine ne porte un nom unique pour cela, et le nom reste. Ce n'est
+> ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -59,48 +61,54 @@ digraph where_it_sits {
 | dehors | la méthode à laquelle les pratiques appartiennent | [ai-augmented-project](https://github.com/Tewf/ai-augmented-project) |
 | dehors | la théorie d'un objectif qui n'est pas connu d'avance | [ai-augmented-foundations](https://github.com/Tewf/ai-augmented-foundations) |
 
-## Le premier travail : une revue de littérature
+## La carte
 
-Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence.
+Douze lignes, une page chacune : [la carte](map/README.md). La pratique est celle du mainteneur, écrite pour cette revue.
 
-Les douze premières lignes de la carte, tirées de la liste de pratiques du mainteneur. La classe de problème est une piste à vérifier, pas un résultat :
+| Pratique | Classe de problème | Algorithme | Adéquation |
+|---|---|---|---|
+| [portée et revue](map/scope-and-review.md) | problème de décision séquentielle | gradient de connaissance | en partie |
+| [collecte](map/data-gathering.md) | recherche d'information (foraging) | règle de la valeur marginale, échantillonnage de Thompson | algorithme |
+| [arrêt](map/stopping.md) | estimer ce qui reste invisible | estimation de couverture | algorithme |
+| [boule de neige](map/snowballing.md) | parcours d'un graphe de citations | suivi de citations, frontière classée | algorithme |
+| [sources payantes](map/paywalled-sources.md) | valeur de l'information | valeur attendue de l'information | algorithme |
+| [lecture approfondie](map/deep-reading.md) | apprentissage actif | échantillonnage par incertitude | algorithme |
+| [essais par bras](map/runs-per-arm.md) | test séquentiel, plan factoriel | séquences de confiance | algorithme |
+| [niveaux](map/tiers.md) | optimisation multi-fidélité | Hyperband, cascade de modèles | algorithme |
+| [lots](map/batches.md) | ordonnancement avec précédence | ordonnancement par liste, chemin critique | algorithme |
+| [le plafond de budget](map/the-budget-cap.md) | allocation sous budget | optimisation bayésienne sensible au coût | en partie |
+| [protocole avant l'essai](map/protocol-before-the-run.md) | préenregistrement | rapport enregistré | algorithme |
+| [mémoire](map/memory.md) | transfert | niveaux de mémoire sur le raisonnement à partir de cas | habitude |
 
-| Pratique | Classe de problème (une piste) |
-|---|---|
-| cadrage et revue | un problème de décision séquentielle |
-| collecte de données | la quête d'information (ligne tenue par data-gathering) |
-| arrêt | l'estimation de ce qui reste invisible (ligne tenue par data-gathering) |
-| boule de neige | le parcours d'un graphe de citations |
-| sources payantes | la valeur de l'information (ligne tenue par data-gathering) |
-| lecture approfondie | l'apprentissage actif |
-| passages par bras | le test séquentiel et le plan factoriel |
-| niveaux | l'optimisation multi-fidélité |
-| lots | l'ordonnancement avec précédences |
-| le plafond de budget | l'allocation sous budget |
-| protocole avant l'exécution | la préinscription |
-| mémoire | le transfert |
+Les pages de la carte sont en anglais.
 
-1. **Cadrer :** le problème en une phrase, et comment chaque domaine le nomme. Pistes à vérifier : la décision algorithmique, la recherche opérationnelle du travail de connaissance, l'analyse de décision, et la littérature des heuristiques et des biais opposée aux algorithmes. Le dépôt peut être renommé alors.
-2. **Revue :** chaque nom, cherché par son nom académique, son acronyme et son auteur ; les synthèses d'abord.
-   - le meilleur algorithme connu pour chaque classe de problème, par son nom académique, son acronyme et son auteur, les synthèses d'abord ;
-   - là où une implémentation de référence existe, trouvée sous le nom de l'auteur avant d'écrire qu'elle manque ;
-   - là où des personnes ont été mesurées contre des algorithmes sur le même problème, et qui a gagné.
-3. **État de l'art, et le dossier contre.**
-4. **Positionnement :** ce que ce dépôt demande et que le domaine ne répond pas déjà.
-5. **Référence :** les douze pratiques telles que le mainteneur les mène aujourd'hui, écrites ligne par ligne, et comparées au meilleur algorithme que la revue a trouvé pour chacune.
+## Ce que la carte a trouvé
 
-## Questions auxquelles la revue doit répondre
+Première passe, 40 sources, lues par résumé ou notice. Les sources et les niveaux de preuve sont sur chaque page.
 
-- **Algorithme ou habitude.** Quelles pratiques ont une classe de problème assez bien posée pour nommer un algorithme, et lesquelles sont des habitudes qu'aucun domaine n'a formalisées ?
-- **L'écart.** Pour chaque ligne, à quelle distance la pratique du mainteneur est-elle du meilleur algorithme connu, mesurée comment ?
-- **Personnes contre algorithmes.** Où la littérature trouve-t-elle une personne de jugement qui bat l'algorithme, et qu'en suit-il sur les lignes à laisser telles quelles ?
-- **La vérification.** Que doit lire un programme dans une ligne pour décider qu'elle est complète, et que ne peut-il jamais décider ?
+- **Aucun domaine ne nomme l'ensemble.** L'analytique de décision séquentielle (Powell 2019) nomme les lignes de décision, et l'automatisation des revues systématiques (Marshall 2019) nomme les lignes 2 à 6 ([cadrage](evidence/frame.md)). Le nom reste.
+- **Onze lignes sur douze ont un problème nommé et une implémentation.** La mémoire est une habitude : le domaine a des conceptions, et aucune mesure de notes tenues par une personne. La portée et le plafond de budget sont posés mais manquent de données pour faire tourner une politique.
+- **L'écart est surtout un manque de relevés, pas un meilleur algorithme.** Dix des douze changements commencent par noter une quantité dont l'algorithme a besoin : rendement par requête, niveau essayé, prédécesseurs de chaque tâche.
+- **Dix essais par bras ne détectent que de grands effets.** Calculé ici. À dix essais par bras, la puissance est de 0,63 pour un taux qui passe de 0 à 0,5, et de 0,14 de 0,5 à 0,8. À soixante, elle est de 0,91 de 0,5 à 0,8, et de 0,31 de 0,5 à 0,65 ([essais par bras](map/runs-per-arm.md)).
+- **Personnes contre algorithmes.** La prédiction mécanique était environ 10 % plus exacte que le jugement clinique, et le jugement clinique était nettement meilleur dans 6 % à 16 % des études (Grove 2000, résumé). L'intuition tient dans des environnements réguliers avec retour d'information (Kahneman 2009). Le choix de la profondeur de lecture, l'inclusion d'un article et ce qu'on note restent donc à la personne.
+
+## La référence
+
+**B1 : le protocole avant l'essai.** La pratique est déjà la procédure du domaine, le préenregistrement (Nosek 2018) : le plan et la prédiction sont écrits d'abord et un programme juge l'essai. L'écart est un horodatage par un tiers et une liste des écarts au plan. Claesen 2021 les a trouvés absents : toutes les études de son échantillon s'écartaient de leur plan, et toutes sauf une laissaient un écart non déclaré (résumé). C'est la seule ligne où la pratique du mainteneur et la meilleure procédure connue coïncident dans leur forme ([protocole avant l'essai](map/protocol-before-the-run.md)).
+
+## Questions auxquelles la revue a répondu
+
+- **Algorithme ou habitude.** Neuf lignes sont des algorithmes, deux sont posées mais non exécutées, et une, la mémoire, est une habitude.
+- **L'écart.** Mesuré par ce que le changement relèverait ; aucun écart n'est encore en heures ou en jetons, car les relevés n'existent pas.
+- **Personnes contre algorithmes.** Voir les résultats ci-dessus ; le jugement est laissé là où l'environnement est irrégulier.
+- **La vérification.** Un programme lit que chaque ligne a un problème, un algorithme avec une clé qui se résout, un lien GitHub et un changement. Il ne peut pas décider qu'un algorithme est le meilleur connu ([la vérification du tableau](checks/local/map_table.py)).
 
 ## Vérifier
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
+python3 -m unittest discover -s checks   # les tests de la vérification du tableau
 ```
 
 La CI exécute les mêmes vérifications à chaque push, et une exécution échoue à la première erreur
@@ -112,7 +120,9 @@ master construit aussi le site, [tewf.github.io/ai-augmented-practice](https://t
 
 | Partie | Résumé |
 |---|---|
-| [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
+| [map](map/) | douze pratiques lues chacune comme un algorithme pour un problème nommé, avec un tableau qu'un programme vérifie |
+| [evidence](evidence/) | le cadrage, le protocole et la bibliographie de 40 sources |
+| [decisions](decisions/) | une fiche par choix qui façonne ce dépôt |
 
 ## Licence
 

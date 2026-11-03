@@ -11,3 +11,38 @@ path = "decisions"
 question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
 file = ""
 answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."
+
+[[answer]]
+check = "tree-shape"
+path = "checks/local"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks/local` is the folder the extension contract names for an extension's own checks, and the standard's runner loads `map_table.py` from there."
+
+[[answer]]
+check = "document-mode"
+path = "AGENTS.md"
+question = "reads about equally as reference and how-to: one mode per document?"
+file = "b59f3a767726"
+answer = "One mode: how to change the repository. Its `Rules for claims` and `House conventions` are rules to follow while doing that, not a second reference."
+
+[[answer]]
+check = "name-content"
+path = "evidence/frame.md"
+question = "the name 'frame' and the opening are far apart in meaning (0.18): does the name predict the content?"
+file = "e63beb0ca7be"
+answer = "Yes: the file is the frame step of the review, as its title `Frame: what the field calls a practice read as an algorithm` says, and the name is the step's."
+
+[[answer]]
+check = "name-content"
+path = "evidence/protocol.md"
+question = "the name 'protocol' and the opening are far apart in meaning (0.17): does the name predict the content?"
+file = "bbfffe12d5c9"
+answer = "Yes: the file says how the sources were found and read, which is what the review's protocol is, as `How the twelve rows were found` says in its title."
+
+[[answer]]
+check = "name-content"
+path = "map/snowballing.md"
+question = "the name 'snowballing' and the opening are far apart in meaning (-0.00): does the name predict the content?"
+file = "69c028a10696"
+answer = "Yes: the name is the practice, and the page reads it as `a traversal of the citation graph`, which is what snowballing is."
